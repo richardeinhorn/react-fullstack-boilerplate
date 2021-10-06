@@ -1,13 +1,30 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb"],
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "rules": {
-    "no-console": "off",
-    "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
-  }
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        // "airbnb",
+        "./lintConfigs/core.js",
+        "./lintConfigs/react.js",
+        "./lintConfigs/prettier.js"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "no-console": "off",
+      "comma-dangle": "off",
+      "react/jsx-filename-extension": "off"
+    }
 }
